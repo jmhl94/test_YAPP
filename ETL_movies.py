@@ -19,7 +19,7 @@ condition_final = condition_1 * condition_2
 
 # Filtrado de los datos
 target_data_raw = data[condition_final].reset_index()
-target_data = [tuple(x) for x in target_data_raw.values]
+target_data = [list(x) for x in target_data_raw.values]
 
 # Verificacion de la base de datos
 db = SQL_utils.connect_to_mysql()
@@ -32,9 +32,9 @@ if not SQL_utils.check_table(db, table_name):
     SQL_utils.create_table(db, table_name)
 
 # Llenado de la tabla
-print(len(target_data_raw))
 for movie in target_data:
-    SQL_utils.insert_items(db, movie[2:], table_name)
+    movie[2] = movie[2].upper()
+    SQL_utils.insert_items(db, tuple(movie[2:]), table_name)
 
 # Cerrado de la conexion
 db.close()
