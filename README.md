@@ -29,7 +29,7 @@ pip3 install -r requirements.txt
 3. Configuración de usuario y clave
 El último paso antes de ejecutar el script es cambiar el usuario y la clave de mysql en el archivo 'SQL_utils.py' en la linea 11 y 12 respectivamente.
 
-![alt text](images/capture.png)
+![alt text](images/capture.jpeg)
 
 ## Funcionamiento
 Para ejecutar el filtrado y la carga de los datos se deje ejecutar el siguiente comando despues de haber instalado las librerías
